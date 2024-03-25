@@ -49,7 +49,7 @@ function drawRect() {
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
    a_context.fillStyle = "#FF8C00";
    a_context.fillRect(50, 25, 150, 100); // creating the filled-in rectangle in the canvas
-}
+};
 /*function makeBorder() { //this function was used to attempt to create a border, but it is now obsolete
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
@@ -63,8 +63,16 @@ function drawRect() {
    a_context.lineTo(300, 225); //line from top right to bottom right
    a_context.strokeStyle = "#000";
    a_context.stroke();
-} */
+}; */
 
+function myName() {
+   var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
+   var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
+   a_context.font='bold 12px sans-serif'; // choosing the font for the text
+   a_context.textBaseline='bottom'; // aligning the text at the bottom of the canvas
+   a_context.textAlign='center'; // aligning the text at the center of the canvas
+   a_context.fillText('Philip', 150, 200); // printing out my name on the canvas
+};
 
 </script>
 
@@ -104,6 +112,8 @@ function drawRect() {
    <canvas id='a' width='300' height="225" style="border:1px solid #000000;"></canvas> <!--This is the creation of the canvas with a border-->
    <p></p> <!-- Creating a line of space between canvas and buttons-->
    <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle</a> <!--Create button that draws a rectangle when pressed.-->
+   <a onclick="myName();" class="w3-btn w3-grey w3-round"> Draw My Name</a> <!--Create button that draws my name when pressed.-->
+</div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
