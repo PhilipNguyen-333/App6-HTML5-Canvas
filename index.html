@@ -50,20 +50,6 @@ function drawRect() {
    a_context.fillStyle = "#FF8C00";
    a_context.fillRect(5, 5, 150, 100); // creating the filled-in rectangle in the canvas
 };
-/*function makeBorder() { //this function was used to attempt to create a border, but it is now obsolete
-   var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
-   var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
-   a_context.moveTo(0, 0); // line from top left to top right
-   a_context.lineTo(300, 0); //line from top left to top right
-   a_context.moveTo(0, 0); // line from top left to bottom left
-   a_context.lineTo(0, 225); // line from top left to bottom left
-   a_context.moveTo(0, 225); //line from bottom left to bottom right
-   a_context.lineTo(300, 225); //line from bottom left to bottom right
-   a_context.moveTo(300, 0); //line from top right to bottom right
-   a_context.lineTo(300, 225); //line from top right to bottom right
-   a_context.strokeStyle = "#000";
-   a_context.stroke();
-}; */
 
 function myName() {
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
@@ -81,7 +67,12 @@ function makeImage() {
    var dog_image = document.getElementById('dogs'); 
    a_context.drawImage(dog_image, 150, 112, 144, 90);
    
-}
+};
+
+function clearCanvas() {
+   var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
+   a_canvas.width = a_canvas.width; // setting the width to any value (even to itself) will cause the canvas to clear
+};
 
 </script>
 
@@ -105,7 +96,7 @@ function makeImage() {
     left: 0vw;
     z-index: 1;
 }
-.hidden {
+.hidden { /* created a new class in order to hide the dog_image */
    display: none;
 }
 </style>
@@ -126,7 +117,8 @@ function makeImage() {
    <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle</a> <!--Create button that draws a rectangle when pressed.-->
    <a onclick="myName();" class="w3-btn w3-grey w3-round"> Draw My Name</a> <!--Create button that draws my name when pressed.-->
    <img id='dogs' src='imagesApp6/dog_photo.jpg' alt='Image of Dogs' class='hidden' width='144' height='90'> <!-- Image of dog is hidden but is needed for makeImage() to function-->
-   <a onclick="makeImage();" class="w3-btn w3-grey w3-round"> Image</a> <!--Create button the causes image to appear on canvas-->
+   <a onclick="makeImage();" class="w3-btn w3-grey w3-round"> Draw Image</a> <!--Create button the causes image to appear on canvas-->
+   <a onclick="clearCanvas();" class="w3-btn w3-grey w3-round"> Clear Canvas</a> <!--Create button that clears the canvas-->
    <p><br><br></p> <!-- Creating lines of space between buttons and footer-->
 </div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
