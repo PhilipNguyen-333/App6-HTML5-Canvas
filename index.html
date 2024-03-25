@@ -68,7 +68,7 @@ function drawRect() {
 function myName() {
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
-   a_context.font='bold 12px sans-serif'; // choosing the font for the text
+   a_context.font='bold 12px sans-serif #000000'; // choosing the font for the text
    a_context.textBaseline='bottom'; // aligning the text at the bottom of the canvas
    a_context.textAlign='center'; // aligning the text at the center of the canvas
    a_context.fillText('Philip', 150, 200); // printing out my name on the canvas
