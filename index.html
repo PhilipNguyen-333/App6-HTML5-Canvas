@@ -50,7 +50,7 @@ function drawRect() {
    a_context.fillStyle = "#FF8C00";
    a_context.fillRect(50, 25, 150, 100); // creating the filled-in rectangle in the canvas
 }
-function makeBorder() {
+/*function makeBorder() { //this function was used to attempt to create a border, but it is now obsolete
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
    a_context.moveTo(0, 0); // line from top left to top right
@@ -63,7 +63,8 @@ function makeBorder() {
    a_context.lineTo(300, 225); //line from top right to bottom right
    a_context.strokeStyle = "#000";
    a_context.stroke();
-}
+} */
+
 
 </script>
 
@@ -100,7 +101,7 @@ function makeBorder() {
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-   <canvas id='a' width='300' height="225" onload="makeBorder();"></canvas> <!--This is the creation of the canvas-->
+   <canvas id='a' width='300' height="225" style="border:1px solid #000000;"></canvas> <!--This is the creation of the canvas-->
    <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle</a> <!--Create button that draws a rectangle when pressed.-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
