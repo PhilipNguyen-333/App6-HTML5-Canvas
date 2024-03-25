@@ -48,7 +48,7 @@ function drawRect() {
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
    a_context.fillStyle = "#FF8C00";
-   a_context.fillRect(50, 25, 150, 100); // creating the filled-in rectangle in the canvas
+   a_context.fillRect(5, 5, 150, 100); // creating the filled-in rectangle in the canvas
 };
 /*function makeBorder() { //this function was used to attempt to create a border, but it is now obsolete
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
@@ -68,11 +68,20 @@ function drawRect() {
 function myName() {
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
-   a_context.font='bold 12px sans-serif #000000'; // choosing the font for the text
+   a_context.font='bold 25px sans-serif'; // choosing the font for the text
+   a_context.fillStyle = "#000000"
    a_context.textBaseline='bottom'; // aligning the text at the bottom of the canvas
-   a_context.textAlign='center'; // aligning the text at the center of the canvas
-   a_context.fillText('Philip', 150, 200); // printing out my name on the canvas
+   a_context.textAlign='left'; // aligning the text at the center of the canvas
+   a_context.fillText('Philip', 5, 220); // printing out my name on the canvas
 };
+
+function makeImage() {
+   var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
+   var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
+   var dog_image = document.getElementById('dogs'); 
+   a_context.drawImage(dog_image, 150, 112, 144, 90);
+   
+}
 
 </script>
 
@@ -90,11 +99,14 @@ function myName() {
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0,0%,100%);
+    background-color: hsl(0, 0%, 100%);
 }
   .page:target {
     left: 0vw;
     z-index: 1;
+}
+.hidden {
+   display: none;
 }
 </style>
 
@@ -113,6 +125,9 @@ function myName() {
    <p></p> <!-- Creating a line of space between canvas and buttons-->
    <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle</a> <!--Create button that draws a rectangle when pressed.-->
    <a onclick="myName();" class="w3-btn w3-grey w3-round"> Draw My Name</a> <!--Create button that draws my name when pressed.-->
+   <img id='dogs' src='imagesApp6/dog_photo.jpg' alt='Image of Dogs' class='hidden' width='144' height='90'> <!-- Image of dog is hidden but is needed for makeImage() to function-->
+   <a onclick="makeImage();" class="w3-btn w3-grey w3-round"> Image</a> <!--Create button the causes image to appear on canvas-->
+   <p><br><br></p> <!-- Creating lines of space between buttons and footer-->
 </div>
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
