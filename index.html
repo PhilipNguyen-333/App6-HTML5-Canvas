@@ -43,14 +43,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
-var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
-var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
+
 function drawRect() {
+   var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
+   var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
    a_context.fillStyle = "#FF8C00";
    a_context.fillRect(50, 25, 150, 100); // creating the filled-in rectangle in the canvas
 }
 function makeBorder() {
-
+   
 }
 
 </script>
