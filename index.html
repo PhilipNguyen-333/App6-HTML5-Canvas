@@ -25,51 +25,48 @@ THe fourth button clears the canvas when pressed.
 
 
 Known Issues:
-blah, blah, blah, blah
+There are no known issues with this program. However, I would like to explore other ways to have the image pop up on the canvas.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>App6---HTML5-Canvas</title>  
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>App6---HTML5-Canvas</title> <!-- Title of the website -->
+      <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- These lines deal with formatting and mobile compatibility-->
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
 
-<script>
-var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+<script> //below are the functions used in this program
 
-function drawRect() {
+function drawRect() { // function that draws a rectangle
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
-   a_context.fillStyle = "#FF8C00";
-   a_context.fillRect(5, 5, 150, 100); // creating the filled-in rectangle in the canvas
+   a_context.fillStyle = "#FF8C00"; // making the rectangle a burnt-orange color
+   a_context.fillRect(5, 5, 150, 100); // creating the filled-in rectangle in the canvas with top left corner positioned at (5,5)
 };
 
-function myName() {
+function myName() { // function that displays "Philip"
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
    a_context.font='bold 25px sans-serif'; // choosing the font for the text
-   a_context.fillStyle = "#000000"
+   a_context.fillStyle = "#000000"; // color of the text is black
    a_context.textBaseline='bottom'; // aligning the text at the bottom of the canvas
    a_context.textAlign='left'; // aligning the text at the center of the canvas
    a_context.fillText('Philip', 5, 220); // printing out my name on the canvas
 };
 
-function makeImage() {
+function makeImage() { // function that displays the image of a dog (dog_image)
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
-   var dog_image = document.getElementById('dogs'); 
-   a_context.drawImage(dog_image, 150, 112, 144, 90);
+   var dog_image = document.getElementById('dogs'); // placing the dog image into a variable called dog_image
+   a_context.drawImage(dog_image, 150, 112, 144, 90); // function that draws the dog_image onto the canvas. (150,112) represents the position of the image's top-left corner, while (144,90) represents the image's dimenisions.
    
 };
 
-function clearCanvas() {
+function clearCanvas() { //function that clears the canvas
    var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
    a_canvas.width = a_canvas.width; // setting the width to any value (even to itself) will cause the canvas to clear
 };
@@ -78,7 +75,7 @@ function clearCanvas() {
 
 
 
-<style>	
+<style>	/* creates different classes */
 .body {
      margin: 0em;
 }
@@ -102,8 +99,8 @@ function clearCanvas() {
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
+<div id="header" class="w3-container w3-flat-carrot"> <!-- Header is burnt-orange color-->
+	<h1>App6---HTML5-Canvas</h1> <!-- Title that is displayed on the header-->
 </div>
 	
 <div id="content" class="w3-container">
@@ -115,14 +112,14 @@ function clearCanvas() {
    <canvas id='a' width='300' height="225" style="border:1px solid #000000;"></canvas> <!--This is the creation of the canvas with a border-->
    <p></p> <!-- Creating a line of space between canvas and buttons-->
    <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle</a> <!--Create button that draws a rectangle when pressed.-->
-   <a onclick="myName();" class="w3-btn w3-grey w3-round"> Draw My Name</a> <!--Create button that draws my name when pressed.-->
+   <a onclick="myName();" class="w3-btn w3-grey w3-round"> Prints My Name</a> <!--Create button that draws my name when pressed.-->
    <img id='dogs' src='imagesApp6/dog_photo.jpg' alt='Image of Dogs' class='hidden' width='144' height='90'> <!-- Image of dog is hidden but is needed for makeImage() to function-->
-   <a onclick="makeImage();" class="w3-btn w3-grey w3-round"> Draw Image</a> <!--Create button the causes image to appear on canvas-->
+   <a onclick="makeImage();" class="w3-btn w3-grey w3-round"> Load Image</a> <!--Create button that causes image to appear on canvas-->
    <a onclick="clearCanvas();" class="w3-btn w3-grey w3-round"> Clear Canvas</a> <!--Create button that clears the canvas-->
    <p><br><br></p> <!-- Creating lines of space between buttons and footer-->
 </div>
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
+<footer class="w3-bottom w3-container w3-flat-carrot"> <!-- footer color is burnt-orange-->
+	<p>DIY!</p> <!-- Text in the footer-->
 </footer>
 
 </body>
