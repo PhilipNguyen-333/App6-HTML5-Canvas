@@ -51,7 +51,17 @@ function drawRect() {
    a_context.fillRect(50, 25, 150, 100); // creating the filled-in rectangle in the canvas
 }
 function makeBorder() {
-   
+   var a_canvas = document.getElementById('a'); // attaining the canvas with id "a"
+   var a_context = a_canvas.getContext('2d'); // telling the program I want the a_canvas to be 2D
+   a_context.moveTo(0, 0); // line from top left to top right
+   a_context.lineTo(300, 0); //line from top left to top right
+   a_context.moveTo(0, 0); // line from top left to bottom left
+   a_context.lineTo(0, 225); // line from top left to bottom left
+   a_context.moveTo(0, 225); //line from bottom left to bottom right
+   a_context.lineTo(300, 225); //line from bottom left to bottom right
+   a_context.moveTo(300, 0); //line from top right to bottom right
+   a_context.lineTo(300, 225); //line from top right to bottom right
+   a_context.strokeStyle = "#000";
 }
 
 </script>
@@ -90,7 +100,7 @@ function makeBorder() {
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
    <canvas id='a' width='300' height="225"> <!--This is the creation of the canvas-->
-      
+      makeBorder();
    </canvas>
    <a onclick="drawRect();" class="w3-btn w3-grey w3-round"> Draw Rectangle</a> <!--Create button that draws a rectangle when pressed.-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
